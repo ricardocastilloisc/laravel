@@ -33,6 +33,18 @@ $router->get('edad2/{edad?}', function($edad = 20)
 
 });
 */
+/*
+Ejemplo de controladores
+Route::get('controlador' , 'PruebaController@index');
+
+$router->get('name/{nombre}' , 'PruebaController@nombre');
+*/
+
+//metodo rest para multiples metodos
+$router->resource('directorio', 'DirectorioController');
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
