@@ -41,10 +41,10 @@ $router->get('name/{nombre}' , 'PruebaController@nombre');
 */
 
 //metodo rest para multiples metodos
-$router->resource('directorio', 'DirectorioController');
+//$router->resource('directorio', 'DirectorioController');
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','FrontController@index');
+Route::get('/contacto','FrontController@contacto');
+Route::get('/reviews','FrontController@reviews');
