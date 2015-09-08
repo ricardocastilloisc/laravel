@@ -8,3 +8,6 @@ class Tipo extends Model
 {
      protected $table = "tipo";
 }
+
+
+
