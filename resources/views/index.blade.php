@@ -1,33 +1,36 @@
 @extends('layouts.principal')
 
 @section('content')
-				<div class="header">
+<div class="header">
 			<div class="top-header">
 				<div class="logo">
 					<a href="index.html"><img src="images/logo.png" alt="" /></a>
 					<p>Movie Theater</p>
 				</div>
+				<div class="search">
+					<form>
+						<input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}"/>
+						<input type="submit" value="">
+					</form>
+				</div>
 				<div class="clearfix"></div>
 			</div>
+		
+<div class="header-info">
+	<h1>Big Hero 6</h1>
+	<form>
+	<div class="form-group">
+		<label>Usuario:</label>
+		<input type="email" class="form-control" placeholder="ingresa usuario">
+	</div>
+		<div class="form-group">
+		<label>Contraseña:</label>
+		<input type="password" class="form-control" placeholder="ingresa contraseña">
+	</div>
+	</form>
+</div>
 
-
-			<div class="header-info">
-				<h1>BIG HERO 6</h1>
-				{!!Form::open()!!}
-					<div class="form-group">
-						{!!Form::label('correo','Correo:')!!}	
-						{!!Form::email('email',null,['class'=>'form-control', 'placeholder'=>'Ingresa tu correo'])!!}
-					</div>
-					<div class="form-group">
-						{!!Form::label('contrasena','Contraseña:')!!}	
-						{!!Form::password('password',['class'=>'form-control', 'placeholder'=>'Ingresa tu contraseña'])!!}
-					</div>
-					{!!Form::submit('Iniciar',['class'=>'btn btn-primary'])!!}
-				{!!Form::close()!!}
-			</div>
-			
 		</div>
-
 
 		<div class="review-slider">
 			<ul id="flexiselDemo1">
