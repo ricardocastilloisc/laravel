@@ -16,6 +16,10 @@ class UsuarioController extends Controller
      */
     public function index()
     {
+        //returnando las lista
+        $users = \DirectorioOnline\User::All();
+        //enviamos la variable
+        return view('usuario.index',compact('users'));
         //
     }
 
@@ -47,7 +51,8 @@ class UsuarioController extends Controller
                 'password'=> bcrypt($request['password']),
             ]
             );
-        return "Usuario Regsitrado";
+        //esta parte es para mandar un mensaje con una variable
+        return redirect('/usuario')->with('message','store');
     }
 
     /**
