@@ -1,6 +1,6 @@
 <?php
 
-namespace PrimerProyecto\Jobs;
+namespace DirectorioOnline\Jobs;
 
 use Illuminate\Bus\Queueable;
 

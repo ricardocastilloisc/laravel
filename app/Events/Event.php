@@ -1,6 +1,6 @@
 <?php
 
-namespace PrimerProyecto\Events;
+namespace DirectorioOnline\Events;
 
 abstract class Event
 {

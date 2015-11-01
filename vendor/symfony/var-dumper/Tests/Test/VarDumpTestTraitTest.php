@@ -9,16 +9,8 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\HttpFoundation;
-
-function time($asFloat = false)
-{
-    return Tests\time();
+// Skipping trait tests for PHP < 5.4
+if (version_compare(PHP_VERSION, '5.4.0-dev', '>=')) {
+    require 'VarDumpTestTraitRequire54.php';
 }
 
-namespace Symfony\Component\HttpFoundation\Tests;
-
-function time()
-{
-    return $_SERVER['REQUEST_TIME'];
-}

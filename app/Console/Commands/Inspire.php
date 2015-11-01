@@ -1,6 +1,6 @@
 <?php
 
-namespace PrimerProyecto\Console\Commands;
+namespace DirectorioOnline\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

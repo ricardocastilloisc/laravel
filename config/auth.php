@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => PrimerProyecto\User::class,
+    'model' => DirectorioOnline\User::class,
 
     /*
     |--------------------------------------------------------------------------

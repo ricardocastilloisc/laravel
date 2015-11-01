@@ -1,8 +1,8 @@
 <?php
 
-namespace PrimerProyecto\Http\Controllers\Auth;
+namespace DirectorioOnline\Http\Controllers\Auth;
 
-use PrimerProyecto\Http\Controllers\Controller;
+use DirectorioOnline\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

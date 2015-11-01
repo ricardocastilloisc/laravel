@@ -1,6 +1,6 @@
 <?php
 
-namespace PrimerProyecto;
+namespace DirectorioOnline;
 
 use Illuminate\Database\Eloquent\Model;
 

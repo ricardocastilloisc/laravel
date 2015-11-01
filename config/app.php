@@ -140,10 +140,12 @@ return [
         /*
          * Application Service Providers...
          */
-        PrimerProyecto\Providers\AppServiceProvider::class,
-        PrimerProyecto\Providers\AuthServiceProvider::class,
-        PrimerProyecto\Providers\EventServiceProvider::class,
-        PrimerProyecto\Providers\RouteServiceProvider::class,
+        DirectorioOnline\Providers\AppServiceProvider::class,
+        DirectorioOnline\Providers\AuthServiceProvider::class,
+        DirectorioOnline\Providers\EventServiceProvider::class,
+        DirectorioOnline\Providers\RouteServiceProvider::class,
+        'Collective\Html\HtmlServiceProvider',
+
 
     ],
 
@@ -193,6 +195,9 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+              'Form' => 'Collective\Html\FormFacade',
+      'Html' => 'Collective\Html\HtmlFacade',
+
 
     ],
 

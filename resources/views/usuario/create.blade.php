@@ -1,9 +1,31 @@
 @extends('layouts.admin')
+@section('content')
 
-	@section('content')
-		@include('alerts.request')
-	  	{!!Form::open(['route'=>'usuario.store', 'method'=>'POST'])!!}
-	  		@include('usuario.forms.usr')
-			{!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
-		{!!Form::close()!!}
-	@stop
+
+	{!!Form::open(['route'=>'usuario.store', 'method'=>'POST'])!!}
+		<div class="form-group">
+			{!!Form::label('Nombre:')!!}
+			{!!Form::text('name',null,['class'=>'form-control', 'placeholder'=>'Ingrese su Nombre'])!!}	
+		</div>
+		<div class="form-group">
+			{!!Form::label('Apellido Paterno:')!!}
+			{!!Form::text('namep',null,['class'=>'form-control', 'placeholder'=>'Ingrese su Apellido Paterno'])!!}	
+		</div>
+		<div class="form-group">
+			{!!Form::label('Apellido Materno:')!!}
+			{!!Form::text('namem',null,['class'=>'form-control', 'placeholder'=>'Ingrese su Apellido Materno'])!!}	
+		</div>
+		<div class="form-group">
+			{!!Form::label('Correo:')!!}
+			{!!Form::email('email',null,['class'=>'form-control', 'placeholder'=>'Ingrese su Correo'])!!}	
+		</div>
+
+		<div class="form-group">
+			{!!Form::label('Password:')!!}
+			{!!Form::password('password',['class'=>'form-control', 'placeholder'=>'Ingrese su contraseña'])!!}	
+		</div>
+		{!!Form::submit('Registrar',['class'=>'btn-primary'])!!}
+
+	{!!Form::close()!!}
+@stop
+ 

@@ -1,6 +1,6 @@
 <?php
 
-namespace PrimerProyecto\Providers;
+namespace DirectorioOnline\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

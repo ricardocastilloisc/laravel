@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => PrimerProyecto\User::class,
+        'model'  => DirectorioOnline\User::class,
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

@@ -1,6 +1,6 @@
 <?php
 
-namespace PrimerProyecto\Http\Middleware;
+namespace DirectorioOnline\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

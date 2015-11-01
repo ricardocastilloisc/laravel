@@ -1,10 +1,10 @@
 <?php
 
-namespace PrimerProyecto\Http\Controllers\Auth;
+namespace DirectorioOnline\Http\Controllers\Auth;
 
-use PrimerProyecto\User;
+use DirectorioOnline\User;
 use Validator;
-use PrimerProyecto\Http\Controllers\Controller;
+use DirectorioOnline\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

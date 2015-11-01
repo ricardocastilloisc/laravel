@@ -1,6 +1,6 @@
 <?php
 
-namespace PrimerProyecto\Http\Requests;
+namespace DirectorioOnline\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

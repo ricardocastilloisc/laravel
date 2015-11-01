@@ -1,11 +1,11 @@
 <?php
 
-namespace PrimerProyecto\Http\Controllers;
+namespace DirectorioOnline\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use PrimerProyecto\Http\Requests;
-use PrimerProyecto\Http\Controllers\Controller;
+use DirectorioOnline\Http\Requests;
+use DirectorioOnline\Http\Controllers\Controller;
 
 class FrontController extends Controller
 {

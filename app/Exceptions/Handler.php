@@ -1,6 +1,6 @@
 <?php
 
-namespace PrimerProyecto\Exceptions;
+namespace DirectorioOnline\Exceptions;
 
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;

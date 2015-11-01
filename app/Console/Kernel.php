@@ -1,6 +1,6 @@
 <?php
 
-namespace PrimerProyecto\Console;
+namespace DirectorioOnline\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \PrimerProyecto\Console\Commands\Inspire::class,
+        \DirectorioOnline\Console\Commands\Inspire::class,
     ];
 
     /**

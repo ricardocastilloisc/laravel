@@ -1,6 +1,6 @@
 <?php
 
-namespace PrimerProyecto\Http\Controllers;
+namespace DirectorioOnline\Http\Controllers;
 
 class PruebaController extends Controller
 {
