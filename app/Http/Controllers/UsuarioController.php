@@ -4,20 +4,25 @@ namespace DirectorioOnline\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Session;
+use  Redirect;
+
+use DirectorioOnline\User;
 use DirectorioOnline\Http\Requests;
 use DirectorioOnline\Http\Controllers\Controller;
+
 
 class UsuarioController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource. 
      *
      * @return Response
      */
     public function index()
     {
         //returnando las lista
-        $users = \DirectorioOnline\User::All();
+        $users = User::All();
         //enviamos la variable
         return view('usuario.index',compact('users'));
         //
@@ -42,13 +47,13 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        \DirectorioOnline\User::create(
+         User::create(
             [
                 'name' => $request['name'],
                 'namep' => $request['namep'],
                 'namem' => $request['namem'],
                 'email'=> $request['email'],
-                'password'=> bcrypt($request['password']),
+                'password'=> $request['password'],
             ]
             );
         //esta parte es para mandar un mensaje con una variable
@@ -74,6 +79,9 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
+        $user = User::find($id);
+        //mandamos la variable como user  
+        return view('usuario.edit',['user'=>$user]);
         //
     }
 
@@ -86,7 +94,13 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $user = User::find($id);
+        $user->fill($request->all());
+        $user->save();
+
+        Session::flash('message','Usuario Editado Correctamente');
+
+        return Redirect::to('/usuario');
     }
 
     /**
