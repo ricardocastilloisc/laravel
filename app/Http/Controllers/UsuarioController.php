@@ -9,6 +9,10 @@ use  Redirect;
 
 use DirectorioOnline\User;
 use DirectorioOnline\Http\Requests;
+use DirectorioOnline\Http\Requests\UserUpdateRequest;
+use DirectorioOnline\Http\Requests\UserCreateRequest;
+
+
 use DirectorioOnline\Http\Controllers\Controller;
 
 
@@ -34,7 +38,7 @@ class UsuarioController extends Controller
      * @return Response
      */
     public function create()
-    {
+    { 
         return view('usuario.create');
         //
     }
@@ -45,7 +49,7 @@ class UsuarioController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(UserCreateRequest $request)
     {
          User::create(
             [
@@ -92,7 +96,7 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(UserUpdateRequest $request, $id)
     {
         $user = User::find($id);
         $user->fill($request->all());
@@ -112,7 +116,7 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
         User::destroy($id);
-        Session::flash('message','Usuario Eliminado Correctamente');
+         Session::flash('message','Usuario Eliminado Correctamente');
 
         return Redirect::to('/usuario');
         //
