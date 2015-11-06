@@ -3,6 +3,7 @@
 namespace DirectorioOnline\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 
 use Session;
 use  Redirect;
@@ -18,6 +19,15 @@ use DirectorioOnline\Http\Controllers\Controller;
 
 class UsuarioController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->beforeFilter('@find',['only' =>['edit','update','destroy']]);    
+    }
+    public function find(Route $route)
+    {
+        $this->user = User::find($route->getParameter('usuario')); 
+    }
     /**
      * Display a listing of the resource. 
      *
@@ -51,17 +61,10 @@ class UsuarioController extends Controller
      */
     public function store(UserCreateRequest $request)
     {
-         User::create(
-            [
-                'name' => $request['name'],
-                'namep' => $request['namep'],
-                'namem' => $request['namem'],
-                'email'=> $request['email'],
-                'password'=> $request['password'],
-            ]
-            );
+         User::create($request->all());
         //esta parte es para mandar un mensaje con una variable
-        return redirect('/usuario')->with('message','store');
+        Session::flash('message','Usuario Creado Correctamente');
+        return Redirect::to('/usuario');
     }
 
     /**
@@ -83,9 +86,8 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
         //mandamos la variable como user  
-        return view('usuario.edit',['user'=>$user]);
+        return view('usuario.edit',['user'=>$this->user]);
         //
     }
 
@@ -98,12 +100,11 @@ class UsuarioController extends Controller
      */
     public function update(UserUpdateRequest $request, $id)
     {
-        $user = User::find($id);
-        $user->fill($request->all());
-        $user->save();
+    
+        $this->user->fill($request->all());
+        $this->  user->save();
 
         Session::flash('message','Usuario Editado Correctamente');
-
         return Redirect::to('/usuario');
     }
 
@@ -115,8 +116,8 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
+    
+        $this->user->delete();
 
         Session::flash('message','Usuario Eliminado Correctamente');
 
