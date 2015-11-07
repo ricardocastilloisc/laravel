@@ -48,5 +48,10 @@ $router->get('name/{nombre}' , 'PruebaController@nombre');
 Route::get('/','FrontController@index');
 //Route::get('contacto','FrontController@contacto');
 //Route::get('reviews','FrontController@reviews');
-//Route::get('admin','FrontController@admin');
+Route::get('admin','FrontController@admin');
 Route::resource('usuario','UsuarioController');
+Route::resource('log','LogController');
+Route::get('logout','LogController@logout');
+
+
+
