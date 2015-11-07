@@ -2,4 +2,6 @@
 
 @section('content')
 
+@include('alerts.errors')
+
 @stop

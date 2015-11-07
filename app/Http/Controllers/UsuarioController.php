@@ -22,6 +22,9 @@ class UsuarioController extends Controller
 
     public function __construct()
     {
+        $this->middleware('auth');
+        //permisos de usuario
+        $this->middleware('admin',['only'=> ['create', 'edit']]);
         $this->beforeFilter('@find',['only' =>['edit','update','destroy']]);    
     }
     public function find(Route $route)

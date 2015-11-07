@@ -29,5 +29,6 @@ class Kernel extends HttpKernel
         'auth' => \DirectorioOnline\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \DirectorioOnline\Http\Middleware\RedirectIfAuthenticated::class,
+        'admin'=> \DirectorioOnline\Http\Middleware\Admin::class,
     ];
 }

@@ -50,6 +50,7 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+                    @if(Auth::user()->email=='admin@admin.com')
                         <li>
                             <a href="#"><i class="fa fa-users fa-fw"></i>Usuarios<span class="fa arrow"></span></a>
                             <ul class=" nav nav-second-level">
@@ -62,7 +63,7 @@
                                 </li>
                             </ul>
                         </li>
-                        
+                    @endif
                         <li>
                             <a href="#"><i class="fa fa-film fa-fw"></i> Pelicula<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

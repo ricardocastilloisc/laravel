@@ -27,7 +27,7 @@ class UserUpdateRequest extends Request
                 'name' => 'required',
                 'namep' => 'required',
                 'namem' => 'required',
-                'email'=> 'required|unique:users',
+                'email'=> 'required',
         ];
     }
 }

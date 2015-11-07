@@ -14,6 +14,10 @@ class FrontController extends Controller
      *
      * @return Response
      */
+    public function __construct()
+    {
+      $this->middleware('auth', ['only' => 'admin']);
+    }
     public function index()
     {
         return view('index');
