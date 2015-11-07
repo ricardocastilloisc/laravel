@@ -1,12 +1,11 @@
 @extends('layouts.admin')  
 	@include('alerts.success')
 	@section('content')
-		<table class="table">
+		<table class="table" width="100%">
 			<thead>
 				<th>Nombre</th>
 				<th>Apellido Paterno</th>
 				<th>Apellido Materno</th>
-
 			</thead>
 			@foreach($users as $user)
 			<tbody>

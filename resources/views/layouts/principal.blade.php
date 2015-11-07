@@ -1,78 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<title>Cinema A Entertainment Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- Custom Theme files -->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!-- Custom Theme files -->
-<script src="js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-</head>
-<body>
-	<!-- header-section-starts -->
-	<div class="full">
-			<div class="menu">
-				<ul>
-					<li><a class="active" href="{{URL::to('/')}}"><i class="home"></i></a></li>
-					<li><a href="{{URL::to('reviews')}}"><div class="cat"><i class="watching"></i><i class="watching1"></i></div></a></li>
-					<li><a href="{{URL::to('contacto')}}"><div class="cnt"><i class="contact"></i><i class="contact1"></i></div></a></li>
-				</ul>
-			</div>
 
-	
+    <head>
 
-	<div class="main">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Incio Sesión</title>
 
-	@yield('content')
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
 
-		
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+
+        <!-- Top content -->
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Directorio Online</strong></h1>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>Iniciar Sesión</h3>
+                            		<p>Correo electrónico y Contraseña:</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-key"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+                            @yield('content')
+			                    
+		                    </div>
+                        </div>
+                    </div>
+                    <div class="row"></div>
+                </div>
+            </div>
+            
+        </div>
 
 
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
 
-	<div class="footer">
-		<h6>Disclaimer : </h6>
-		<p class="claim">This is a freebies and not an official website, I have no intention of disclose any movie, brand, news.My goal here is to train or excercise my skill and share this freebies.</p>
-		<a href="example@mail.com">example@mail.com</a>
-		<div class="copyright">
-			<p> Template by  <a href="http://w3layouts.com">  W3layouts</a></p>
-		</div>
-	</div>	
+    </body>
 
-</div>
-</div>
-
-
-
-		<script type="text/javascript">
-		$(window).load(function() {
-			
-		  $("#flexiselDemo1").flexisel({
-				visibleItems: 6,
-				animationSpeed: 1000,
-				autoPlay: true,
-				autoPlaySpeed: 3000,    		
-				pauseOnHover: false,
-				enableResponsiveBreakpoints: true,
-				responsiveBreakpoints: { 
-					portrait: { 
-						changePoint:480,
-						visibleItems: 2
-					}, 
-					landscape: { 
-						changePoint:640,
-						visibleItems: 3
-					},
-					tablet: { 
-						changePoint:768,
-						visibleItems: 4
-					}
-				}
-			});
-			});
-		</script>
-		<script type="text/javascript" src="js/jquery.flexisel.js"></script>	
-</body>
 </html>
