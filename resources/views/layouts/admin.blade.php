@@ -80,10 +80,10 @@
                             <a href="#"><i class="fa fa-child fa-fw"></i>Modalidad<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#"><i class='fa fa-plus fa-fw'></i>Agregar</a>
+                                    <a href="{!!URL::to('/tipo/create')!!}"><i class='fa fa-plus fa-fw'></i>Agregar</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class='fa fa-list-ol fa-fw'></i>Modalidad</a>
+                                    <a href="{!!URL::to('/tipo')!!}"><i class='fa fa-list-ol fa-fw'></i>Modalidades</a>
                                 </li>
                             </ul>
                         </li>

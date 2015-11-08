@@ -14,7 +14,7 @@ $("#registro").click(function(){
 			$("#msj-success").fadeIn();
 		},
 		error:function(msj){
-			$("#msj").html(msj.responseJSON.genre);
+			$("#msj").html(msj.responseJSON.tipo);
 			$("#msj-error").fadeIn();
 		}
 	});

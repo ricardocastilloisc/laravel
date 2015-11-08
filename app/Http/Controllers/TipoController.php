@@ -5,6 +5,7 @@ namespace DirectorioOnline\Http\Controllers;
 use Illuminate\Http\Request;
 
 use DirectorioOnline\Http\Requests;
+use DirectorioOnline\Http\Requests\TipoRequest;
 use DirectorioOnline\Http\Controllers\Controller;
 use DirectorioOnline\Tipo;
 use Illuminate\Routing\Route;
@@ -53,7 +54,7 @@ class TipoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TipoRequest $request)
     {
         if($request->ajax())
         {
