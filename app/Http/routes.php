@@ -57,6 +57,7 @@ Route::resource('log','LogController');
 Route::resource('tipo','TipoController');
 
 Route::get('logout','LogController@logout');
+Route::get('tipos','TipoController@listing');
 
 
 

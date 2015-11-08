@@ -14,8 +14,16 @@ class TipoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function listing()
+    {
+        $tipos = Tipo::all();
+        return response()->json(
+                $tipos->toArray()
+            );
+    }
     public function index()
     {
+        return view('tipo.index');
         //
     }
 
