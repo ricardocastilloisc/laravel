@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use DirectorioOnline\Http\Requests;
 use DirectorioOnline\Http\Controllers\Controller;
 use DirectorioOnline\Tipo;
+use Illuminate\Routing\Route;
 class TipoController extends Controller
 {
     /**
@@ -14,6 +15,14 @@ class TipoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->beforeFilter('@find',['only'=> ['edit', 'update','destroy']]);
+    }
+    public function find(Route $route)
+    {
+        $this->tipo = Tipo::find($route->getParameter('tipo'));
+    }
     public function listing()
     {
         $tipos = Tipo::all();
@@ -75,9 +84,9 @@ class TipoController extends Controller
      */
     public function edit($id)
     {
-        $tipo = Tipo::find($id);
+        
         return response()->json(
-                $tipo->toArray()
+                $this->tipo->toArray()
             );
         //
     }
@@ -91,9 +100,9 @@ class TipoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tipo = Tipo::find($id);
-        $tipo->fill($request->all());
-        $tipo->save();
+
+        $this->tipo->fill($request->all());
+        $this->tipo->save();
 
         return response()->json([
                 "mensaje" => "listo"
@@ -109,6 +118,8 @@ class TipoController extends Controller
      */
     public function destroy($id)
     {
+        $this->tipo->delete();
+        return response()->json(["mensaje"=>"borrado"]);
         //
     }
 }

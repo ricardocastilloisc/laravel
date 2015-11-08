@@ -2,7 +2,7 @@
 	@section('content')
 	@include('tipo.modal')
 		<div id="msj-success" class="alert alert-success alert-dismissible" role="alert" style='display:none'>
-			<strong>Genero Agregado correctamente</strong>
+			<strong>Tipo de a actualizado correctamente</strong>
 		</div>
 		<table class="table">
 			<thead>
