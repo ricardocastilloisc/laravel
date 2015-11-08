@@ -1,6 +1,6 @@
 $("#registro").click(function(){
-	var dato = $("#genre").val();
-	var route = "http://localhost:8000/genero";
+	var dato = $("#tipo").val();
+	var route = "http://localhost:8000/tipo";
 	var token = $("#token").val();
 
 	$.ajax({
@@ -8,7 +8,7 @@ $("#registro").click(function(){
 		headers: {'X-CSRF-TOKEN': token},
 		type: 'POST',
 		dataType: 'json',
-		data:{genre: dato},
+		data:{tipo: dato},
 
 		success:function(){
 			$("#msj-success").fadeIn();

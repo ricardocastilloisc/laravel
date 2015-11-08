@@ -16,7 +16,7 @@ class CreateDirectorioTable extends Migration
         {
             $table->increments('id');
             $table->string('nombre_unidad_administrativa');
-            $table->string('nombre_titular');
+            $table->string('cct');
             $table->string('telefono');
             $table->string('celular');
             $table->string('email');
