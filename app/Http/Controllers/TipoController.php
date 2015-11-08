@@ -75,6 +75,10 @@ class TipoController extends Controller
      */
     public function edit($id)
     {
+        $tipo = Tipo::find($id);
+        return response()->json(
+                $tipo->toArray()
+            );
         //
     }
 
@@ -87,6 +91,13 @@ class TipoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $tipo = Tipo::find($id);
+        $tipo->fill($request->all());
+        $tipo->save();
+
+        return response()->json([
+                "mensaje" => "listo"
+            ]);
         //
     }
 
