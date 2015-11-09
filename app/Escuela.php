@@ -33,8 +33,16 @@ class Escuela extends Model
 		return DB::table('directorio')
 			->join('tipo','tipo.id','=','directorio.tipo_id')
 			->select('directorio.*','tipo.tipo')
-			->paginate(4);
+			->paginate(1);
 
 	}
+	public function scopeCCT($query, $cct)
+    {
+    	if(trim($cct) != "")
+    	{
+    		$query->join('tipo','tipo.id','=','directorio.tipo_id')->where('cct',"LIKE","%$cct%");
+    	}
+    	
+    }
     //
 }

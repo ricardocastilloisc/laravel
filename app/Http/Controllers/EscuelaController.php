@@ -30,14 +30,21 @@ class EscuelaController extends Controller
      */
     public function index(Request $request)
     {
-
-        $escuelas = Escuela::Escuelas();
-        if($request->ajax())
-        {
-            return response()->json(view('escuelas.escuelas', compact('escuelas'))->render());
+        if($request->get('cct') ==''){
+            $tipos = Tipo::lists('tipo', 'id');
+            $escuelas = Escuela::Escuelas();
+            if($request->ajax())
+            {
+                return response()->json(view('escuelas.escuelas', compact('escuelas'))->render());
+            }
+            return view('escuelas.index', compact('escuelas'));
         }
-        return view('escuelas.index', compact('escuelas'));
-        //
+        else
+            {
+                $tipos = Tipo::lists('tipo', 'id');
+                $escuelas = Escuela::cct($request->get('cct'))->orderBy('nombre_unidad_administrativa','ASC')->paginate(1);
+                return view('escuelas.index', compact('escuelas'));
+            }
     }
 
     /**

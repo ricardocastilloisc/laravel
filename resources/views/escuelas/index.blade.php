@@ -1,6 +1,13 @@
 @extends('layouts.admin')
 	@include('alerts.success')
 	@section('content')
+			{!!Form::open(['route'=>'escuela.index','method'=>'GET', 'class'=>'navbar-form navbar-left pull-right','role'=>'search'])!!}
+	
+		<div class="form-group">
+			{!!Form::text('cct', null,['class'=>'form-control', 'placeholder'=>'Buscar por CCT'])!!}
+		</div>
+		 <button type="submit" class="btn btn-default">Buscar</button>
+		{!!Form::close()!!}
 	<div class="escuelas">
 		
 	
