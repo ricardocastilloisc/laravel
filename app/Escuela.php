@@ -33,6 +33,7 @@ class Escuela extends Model
 		return DB::table('directorio')
 			->join('tipo','tipo.id','=','directorio.tipo_id')
 			->select('directorio.*','tipo.tipo')
+			->orderBy('nombre_unidad_administrativa','ASC')
 			->paginate(1);
 
 	}
@@ -41,6 +42,15 @@ class Escuela extends Model
     	if(trim($cct) != "")
     	{
     		$query->join('tipo','tipo.id','=','directorio.tipo_id')->where('cct',"LIKE","%$cct%");
+    	}
+    	
+    }
+
+    public function scopeTIPO($query, $tipo)
+    {
+    	if(trim($tipo) != "")
+    	{
+    		$query->join('tipo','tipo.id','=','directorio.tipo_id')->where('tipo_id',$tipo);
     	}
     	
     }

@@ -1,6 +1,12 @@
 @extends('layouts.admin')
 	@include('alerts.success')
 	@section('content')
+
+
+
+
+
+
 			{!!Form::open(['route'=>'escuela.index','method'=>'GET', 'class'=>'navbar-form navbar-left pull-right','role'=>'search'])!!}
 	
 		<div class="form-group">
@@ -8,8 +14,22 @@
 		</div>
 		 <button type="submit" class="btn btn-default">Buscar</button>
 		{!!Form::close()!!}
-	<div class="escuelas">
+	
 		
+
+
+{!!Form::open(['route'=>'escuela.index','method'=>'GET', 'class'=>'navbar-form navbar-left pull-right','role'=>'search'])!!}
+	
+	<div class="form-group">
+	{!!Form::label('tipo','Buscar por Modalidad: ')!!}
+	{!!Form::select('tipo_id',$tipos)!!}
+</div>
+		 <button type="submit" class="btn btn-default">Buscar</button>
+		{!!Form::close()!!}
+	<div class="escuelas">
+
+
+
 	
 		<table class="table" width="100%">
 			@foreach($escuelas as $escuela)
