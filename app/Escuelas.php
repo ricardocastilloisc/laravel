@@ -4,7 +4,7 @@ namespace DirectorioOnline;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
-
+use DB;
 class Escuelas extends Model
 {
 	protected $table = "directorio";
@@ -16,6 +16,23 @@ class Escuelas extends Model
 		$this->attributes['path'] = Carbon::now()->second.$path->getClientOriginalName();
 		$name = Carbon::now()->second.$path->getClientOriginalName();
 		\Storage::disk('local')->put($name, \File::get($path));
+	}
+
+	//aqui es donde se hace lo mas importante que es la consulta el 
+	//join es para hace primero especifica 
+	//segundo de donde se va comparar
+	//el tercero es que operacion quieres
+	//el cuarto es la comparacion
+	//en el select es lo que uno quiere y que dato quieres que obtenga 
+	//y el segundo es nada mas y menos que agrege el parametro
+	////el ultimo que metodo quieres
+	public static function Escuelass()
+	{
+		return DB::table('directorio')
+			->join('tipo','tipo.id','=','directorio.tipo_id')
+			->select('directorio.*','tipo.tipo')
+			->paginate(3);
+
 	}
     //
 }

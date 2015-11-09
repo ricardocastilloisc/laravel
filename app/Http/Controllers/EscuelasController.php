@@ -26,8 +26,15 @@ class EscuelasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
+        $escuelas = Escuelas::Escuelass();
+        if($request->ajax())
+        {
+            return response()->json(view('escuelas.escuelas', compact('escuelas'))->render());
+        }
+        return view('escuelas.index', compact('escuelas'));
         //
     }
 
@@ -52,7 +59,8 @@ class EscuelasController extends Controller
     public function store(EscuelaRequest $request)
     {
         Escuelas::create($request->all());
-        return "listo";
+        Session::flash('message','Escuela Agregado Correctamente Correctamente');
+        return Redirect::to('/escuela');
         //
     }
 

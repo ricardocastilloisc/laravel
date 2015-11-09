@@ -39,7 +39,7 @@ class UsuarioController extends Controller
     public function index(Request $request)
     {
         //returnando las lista
-        $users = User::paginate(2); 
+        $users = User::paginate(3); 
         if($request->ajax())
         {
             return response()->json(view('usuario.users', compact('users'))->render());
