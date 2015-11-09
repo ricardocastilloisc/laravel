@@ -42,8 +42,12 @@
 				<tr>
 					<th>Operaciones:</th>
 				</tr>
-				<tr>
-					<td>Editar || Eliminar</td>
+				<tr><td>
+
+
+				{!!link_to_route('escuela.edit', $title='Editar', $parameters=$escuela->id, $attributes=['class'=>'btn btn-primary'])!!}
+				
+				</td>
 				</tr>
 				<tr>
 					<td height="30px"></td>

@@ -5,4 +5,4 @@
 		  		@include('escuelas.forms.escuelas')
 				{!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
 			{!!Form::close()!!}
-	@endsection
+	@endsection 

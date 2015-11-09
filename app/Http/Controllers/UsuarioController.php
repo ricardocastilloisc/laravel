@@ -131,4 +131,7 @@ class UsuarioController extends Controller
         return Redirect::to('/usuario');
         //
     }
+    
+
+
 }

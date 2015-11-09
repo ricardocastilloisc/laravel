@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Directorio Admin</a>
+                <a class="navbar-brand" href="{!!URL::to('/admin')!!}">Directorio Admin</a>
             </div>
            
 
@@ -63,6 +63,17 @@
                                 </li>
                             </ul>
                         </li>
+                         <li>
+                            <a href="#"><i class="fa fa-child fa-fw"></i>Modalidad<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{!!URL::to('/tipo/create')!!}"><i class='fa fa-plus fa-fw'></i>Agregar</a>
+                                </li>
+                                <li>
+                                    <a href="{!!URL::to('/tipo')!!}"><i class='fa fa-list-ol fa-fw'></i>Modalidades</a>
+                                </li>
+                            </ul>
+                        </li>
                     @endif
                         <li>
                             <a href="#"><i class="fa fa-book fa-fw"></i>Escuelas<span class="fa arrow"></span></a>
@@ -76,17 +87,7 @@
                             </ul>
                         </li>
 
-                        <li>
-                            <a href="#"><i class="fa fa-child fa-fw"></i>Modalidad<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="{!!URL::to('/tipo/create')!!}"><i class='fa fa-plus fa-fw'></i>Agregar</a>
-                                </li>
-                                <li>
-                                    <a href="{!!URL::to('/tipo')!!}"><i class='fa fa-list-ol fa-fw'></i>Modalidades</a>
-                                </li>
-                            </ul>
-                        </li>
+                       
 
                     </ul>
                 </div>

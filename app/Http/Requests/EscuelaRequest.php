@@ -28,6 +28,9 @@ class EscuelaRequest extends Request
                 'email' => 'required',
                 'cct'=> 'required|unique:directorio',
                 'tipo_id'=> 'required',
+
+
+                
             //
         ];
     }
