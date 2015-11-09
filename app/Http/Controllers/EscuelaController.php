@@ -44,13 +44,13 @@ class EscuelaController extends Controller
                 if($request->get('cct') != '')
                 {
                     $tipos = Tipo::lists('tipo', 'id');
-                    $escuelas = Escuela::cct($request->get('cct'))->orderBy('nombre_unidad_administrativa','ASC')->paginate(1);
+                    $escuelas = Escuela::cct($request->get('cct'))->orderBy('nombre_unidad_administrativa','ASC')->paginate(4);
                     return view('escuelas.index', compact('escuelas','tipos'));
                 }
                 if($request->get('tipo_id')!='')
                 {
                     $tipos = Tipo::lists('tipo', 'id');
-                    $escuelas = Escuela::tipo($request->get('tipo_id'))->orderBy('nombre_unidad_administrativa','ASC')->paginate(1);
+                    $escuelas = Escuela::tipo($request->get('tipo_id'))->orderBy('nombre_unidad_administrativa','ASC')->paginate(4);
                     return view('escuelas.index', compact('escuelas','tipos'));
                 }
             }

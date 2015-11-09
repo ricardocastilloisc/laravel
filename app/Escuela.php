@@ -34,7 +34,7 @@ class Escuela extends Model
 			->join('tipo','tipo.id','=','directorio.tipo_id')
 			->select('directorio.*','tipo.tipo')
 			->orderBy('nombre_unidad_administrativa','ASC')
-			->paginate(1);
+			->paginate(4);
 
 	}
 	public function scopeCCT($query, $cct)
