@@ -55,6 +55,7 @@ Route::resource('usuario','UsuarioController');
 
 Route::resource('log','LogController');
 Route::resource('tipo','TipoController');
+Route::resource('escuela','EscuelasController');
 
 Route::get('logout','LogController@logout');
 Route::get('tipos','TipoController@listing');
