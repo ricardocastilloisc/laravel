@@ -4,7 +4,7 @@ $(document).ready(function(){
 function Carga()
 {
 	var tablaDatos = $("#datos");
-	var route = "http://localhost:8000/tipos";
+	var route = "/tipos";
 	$("#datos").empty();
 	$.get(route, function(res){
 		$(res).each(function(key,value){
@@ -14,7 +14,7 @@ function Carga()
 }
 function Eliminar(btn)
 {
-	var route = "http://localhost:8000/tipo/"+btn.value+"";
+	var route = "/tipo/"+btn.value+"";
 	var token = $("#token").val();
 	$.ajax({
 		url: route,
@@ -30,7 +30,7 @@ function Eliminar(btn)
 }
 function Mostrar(btn)
 {
-	var route= "http://localhost:8000/tipo/"+btn.value+"/edit";
+	var route= "/tipo/"+btn.value+"/edit";
 	$.get(route, function(res){
 		$("#tipo").val(res.tipo);
 		$("#id").val(res.id);
@@ -39,7 +39,7 @@ function Mostrar(btn)
 $("#actualizar").click(function(){
 	var value = $("#id").val();
 	var dato = $("#tipo").val();
-	var route = "http://localhost:8000/tipo/"+value+"";
+	var route = "/tipo/"+value+"";
 	var token = $("#token").val();
 	$.ajax({
 		url: route,

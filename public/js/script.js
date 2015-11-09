@@ -1,6 +1,6 @@
 $("#registro").click(function(){
 	var dato = $("#tipo").val();
-	var route = "http://localhost:8000/tipo";
+	var route = "/tipo";
 	var token = $("#token").val();
 
 	$.ajax({
