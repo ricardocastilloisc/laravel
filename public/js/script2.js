@@ -4,7 +4,7 @@ $(document).ready(function(){
 function Carga()
 {
 	var tablaDatos = $("#datos");
-	var route = "/tipos";
+	var route = "/directorioonline/public/tipos";
 	$("#datos").empty();
 	$.get(route, function(res){
 		$(res).each(function(key,value){
@@ -14,7 +14,7 @@ function Carga()
 }
 function Eliminar(btn)
 {
-	var route = "/tipo/"+btn.value+"";
+	var route = "/directorioonline/public/tipo/"+btn.value+"";
 	var token = $("#token").val();
 	$.ajax({
 		url: route,
@@ -30,7 +30,7 @@ function Eliminar(btn)
 }
 function Mostrar(btn)
 {
-	var route= "/tipo/"+btn.value+"/edit";
+	var route= "/directorioonline/public/tipo/"+btn.value+"/edit";
 	$.get(route, function(res){
 		$("#tipo").val(res.tipo);
 		$("#id").val(res.id);

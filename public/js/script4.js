@@ -1,7 +1,7 @@
 $(document).on('click','.pagination a',function(e){
     e.preventDefault();
     var page = $(this).attr('href').split('page=')[1];
-    var route = "/escuela";
+    var route = "/directorioonline/public/escuela";
     
     $.ajax({
         url: route,

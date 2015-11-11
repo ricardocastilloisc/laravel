@@ -3,34 +3,35 @@
 	@section('content')
 	<div class="users">
 		<table class="table" width="100%">
-			<thead>
-				<th>Nombre</th>
-				<th>Apellido Paterno</th>
-				<th>Apellido Materno</th>
+			<tbody>
 			</thead>
 			@foreach($users as $user)
-			<tbody>
-				<td>{{$user->name}}</td>
-				<td>{{$user->namep}}</td>
-				<td>{{$user->namem}}</td>
-			</tbody>
-			<thead>
-				<th>Correo</th>
-				<th colspan="2">Operación</th>
-			</thead>
-			<tbody>
-				<td>{{$user->email}}</td>	
-				<td colspan="2">
-				{!!link_to_route('usuario.edit', $title='Editar', $parameters=$user->id, $attributes=['class'=>'btn btn-primary'])!!}
-				</td>
-			</tbody>
-			<tbody>
-			<tr>
-				<td height="20px"></td>
-			</tr>
-			</tbody>
-			
+				<tr>
+					<th>Nombre</th>
+					<th>Apellido Paterno</th>
+					
+				</tr>
+				<tr>
+					<td>{{$user->name}}</td>
+					<td>{{$user->namep}}</td>
+					
+				</tr>
+				<tr>
+					<th>Apellido Materno</th>
+					<th>Correo</th>
+				</tr>
+				<tr>
+					<td>{{$user->namem}}</td>
+					<td>{{$user->email}}</td>	
+	
+				</tr>
+				<tr>
+					<td colspan="2">
+					{!!link_to_route('usuario.edit', $title='Editar', $parameters=$user->id, $attributes=['class'=>'btn btn-primary'])!!}
+					</td>
+				</tr>
 			@endforeach
+			</tbody>
 		</table>
 		{!!$users->render()!!}
 	</div>
@@ -39,4 +40,4 @@
 	@section('scripts')
 		{!!Html::script('js/script3.js')!!}
 	@endsection
-	@stop
+	

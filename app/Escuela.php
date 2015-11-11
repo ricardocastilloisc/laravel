@@ -41,7 +41,9 @@ class Escuela extends Model
     {
     	if(trim($cct) != "")
     	{
-    		$query->join('tipo','tipo.id','=','directorio.tipo_id')->where('cct',"LIKE","%$cct%");
+    		$query->join('tipo','tipo.id','=','directorio.tipo_id')
+			->select('directorio.*','tipo.tipo')
+			->orderBy('nombre_unidad_administrativa','ASC')->where('cct',"LIKE","%$cct%");
     	}
     	
     }
@@ -50,7 +52,9 @@ class Escuela extends Model
     {
     	if(trim($tipo) != "")
     	{
-    		$query->join('tipo','tipo.id','=','directorio.tipo_id')->where('tipo_id',$tipo);
+    		$query->join('tipo','tipo.id','=','directorio.tipo_id')
+			->select('directorio.*','tipo.tipo')
+			->orderBy('nombre_unidad_administrativa','ASC')->where('tipo_id',$tipo);
     	}
     	
     }
